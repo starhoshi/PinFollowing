@@ -15,7 +15,7 @@ const bodyCallback = (_, observer) => {
   }
 
   log(tablist);
-  const followingTab = [...tablist.children].find(c => c.textContent == 'フォロー中');
+  const followingTab = [...tablist.children].find(c => c.textContent === 'フォロー中' || c.textContent === 'Following');
   const aTag = followingTab.getElementsByTagName('a')[0];
   aTag.click();
   observer.disconnect();
