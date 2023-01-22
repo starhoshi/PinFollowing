@@ -1,6 +1,6 @@
 {
   "name": "Pin Following",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "manifest_version": 3,
   "description": "Setting the 'Following' tab as the default selection on Twitter",
   "content_scripts": [{
