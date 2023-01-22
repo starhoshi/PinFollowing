@@ -5,4 +5,4 @@ PinFollowing は、Twitterでフォロー中タブを初期選択にするだけ
 
 ## Chrome Web Store
 
-Waiting for review.
+https://chrome.google.com/webstore/detail/pin-following/biohnbhlnoebedemmigmnnckajfndhki
