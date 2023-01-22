@@ -5,7 +5,7 @@ PinFollowing は、Twitter でフォロー中タブを初期選択にするだ�
 
 ## Chrome Web Store
 
-Waiting for review.
+https://chrome.google.com/webstore/detail/pin-following/biohnbhlnoebedemmigmnnckajfndhki
 
 ## Icon
 
