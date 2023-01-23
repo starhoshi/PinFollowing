@@ -3,6 +3,12 @@
   "version": "1.0.1",
   "manifest_version": 3,
   "description": "Setting the 'Following' tab as the default selection on Twitter",
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
   "content_scripts": [{
     "matches": ["https://twitter.com/*"],
     "run_at": "document_end",

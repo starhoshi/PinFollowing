@@ -1,4 +1,4 @@
-const development = false;
+const development = true;
 const log = (message) => {
   if (development) {
     console.log(message);
