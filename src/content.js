@@ -35,16 +35,17 @@ const observeBody = () => {
 }
 
 /// Detecting when a user navigates to the home screen from a different page
-var current = false;
+var firstHome = true;
 const headCallback = () => {
   log('call headCallback');
-  log(`current ${current}`);
+  log(`current ${firstHome}`);
   log(location.pathname);
   const isHome = location.pathname == '/home';
-  if (!current && isHome) {
+  if (firstHome && isHome) {
     observeBody();
+    firstHome = false;
   }
-  current = isHome;
+  // current = isHome;
 }
 
 const head = document.querySelector('head');
