@@ -34,7 +34,8 @@ const observeBody = () => {
   }
 }
 
-/// Detecting when a user navigates to the home screen from a different page
+// Not automatically switch after opening the home screen once.
+// Because the user may be browsing the recommended tabs themselves.
 var firstHome = true;
 const headCallback = () => {
   log('call headCallback');
