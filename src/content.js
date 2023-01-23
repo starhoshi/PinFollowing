@@ -1,12 +1,12 @@
-const development = true;
+const development = false;
 const log = (message) => {
   if (development) {
     console.log(message);
   }
 }
 
-var observing = false;
-const bodyCallback = (_, observer) => {
+var tablistObserver;
+const bodyCallback = () => {
   log('call bodyCallback');
 
   const tablist = document.querySelector('div[role="tablist"]');
@@ -18,19 +18,19 @@ const bodyCallback = (_, observer) => {
   const followingTab = [...tablist.children].find(c => c.textContent === 'フォロー中' || c.textContent === 'Following');
   const aTag = followingTab.getElementsByTagName('a')[0];
   aTag.click();
-  observer.disconnect();
-  observing = false;
+  tablistObserver.disconnect();
+  tablistObserver = undefined;
 };
 
 const observeBody = () => {
   log('call observeBody');
-  if (!observing) {
+  if (!tablistObserver) {
     log('start observe');
     observing = true;
-    const observer = new MutationObserver(bodyCallback);
+    tablistObserver = new MutationObserver(bodyCallback);
     const body = document.querySelector('body')
-    const config = { childList: true };
-    observer.observe(body, config);
+    const config = { childList: true, subtree: true };
+    tablistObserver.observe(body, config);
   }
 }
 
@@ -41,7 +41,7 @@ const headCallback = () => {
   log(`current ${current}`);
   log(location.pathname);
   const isHome = location.pathname == '/home';
-  if (isHome) {
+  if (!current && isHome) {
     observeBody();
   }
   current = isHome;
