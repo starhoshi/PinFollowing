@@ -38,14 +38,13 @@ const observeBody = () => {
 var firstHome = true;
 const headCallback = () => {
   log('call headCallback');
-  log(`current ${firstHome}`);
+  log(`firstHome ${firstHome}`);
   log(location.pathname);
   const isHome = location.pathname == '/home';
   if (firstHome && isHome) {
     observeBody();
     firstHome = false;
   }
-  // current = isHome;
 }
 
 const head = document.querySelector('head');
